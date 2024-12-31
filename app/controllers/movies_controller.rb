@@ -59,15 +59,29 @@ class MoviesController < ApplicationController
 
   def index
     # Default sort and direction
+    # Default sort and direction
     sort = params[:sort] || "created_at"
     direction = params[:direction] || "asc"
 
-    # Ensure that the sort column is either 'title' or 'created_at'
-    if sort == "title"
-      @movies = Movie.order(title: direction)
-    else
-      @movies = Movie.order(created_at: direction)
+    # Start with all movies
+    @movies = Movie.all
+
+    # Apply search filter if query is present
+    if params[:query].present?
+      @movies = @movies.where("title LIKE ?", "%#{params[:query]}%")
     end
+
+    # Sort movies by the selected attribute
+    if sort == "title"
+      @movies = @movies.order(title: direction)
+    else
+      @movies = @movies.order(created_at: direction)
+    end
+
+    # Pagination (optional, but useful for larger lists)
+    @movies = @movies.page(params[:page]).per(10)
+  end
+
   end
 
   private

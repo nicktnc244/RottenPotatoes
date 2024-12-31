@@ -4,6 +4,11 @@
 
 <h1>Movies</h1>
 
+<%= form_tag(movies_path, method: :get, class: "search-form") do %>
+  <%= text_field_tag :query, params[:query], placeholder: "Search by title", class: "search-input" %>
+  <%= submit_tag "Search", class: "search-button" %>
+<% end %>
+
 <%= link_to "Sort by Title", movies_path(sort: "title", direction: (params[:direction] == "asc" ? "desc" : "asc")), class: 'sort-link' %> |
 <%= link_to "Sort by Date", movies_path(sort: "created_at", direction: (params[:direction] == "asc" ? "desc" : "asc")), class: 'sort-link' %>
 
