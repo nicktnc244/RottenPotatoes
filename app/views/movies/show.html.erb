@@ -1,12 +1,12 @@
-<% content_for :title, @movie.title %>
+<% content_for :title, "Movie Details" %>
 
-<div class="movie-show-container">
-  <h1><%= @movie.title %></h1>
+<div class="movie-details-container">
+  <h1 class="page-title">Movie Details</h1>
 
-  <div class="movie-details">
+  <div class="movie-info">
     <p>
-      <strong>Release date:</strong>
-      <%= @movie.release_date.strftime('%B %d, %Y') if @movie.release_date %>
+      <strong>Title:</strong>
+      <%= @movie.title %>
     </p>
 
     <p>
@@ -15,11 +15,65 @@
     </p>
 
     <p>
+      <strong>Release Date:</strong>
+      <%= @movie.release_date.strftime('%B %d, %Y') if @movie.release_date %>
+    </p>
+
+    <p>
       <strong>Description:</strong>
       <%= @movie.description %>
     </p>
   </div>
 
-  <%= link_to "Edit", edit_movie_path(@movie), class: "edit-link" %> |
-  <%= link_to "Back", movies_path, class: "back-link" %>
+  <div class="form-actions">
+    <%= link_to "Edit", edit_movie_path(@movie), class: "edit-link" %> |
+    <%= link_to "Back", movies_path, class: "back-link" %>
+  </div>
 </div>
+
+<style>
+  .movie-details-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .page-title {
+    color: #333;
+    font-size: 28px; /* Increased font size */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .movie-info {
+    margin-bottom: 20px;
+  }
+
+  .form-actions {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .edit-link {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px; /* Increased font size */
+  }
+
+  .edit-link:hover {
+    color: #007bff;
+  }
+
+  .back-link {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px; /* Increased font size */
+  }
+
+  .back-link:hover {
+    color: #007bff;
+  }
+</style>

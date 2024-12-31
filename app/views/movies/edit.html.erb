@@ -1,9 +1,44 @@
 <% content_for :title, "Editing movie" %>
 
 <div class="movie-form-container">
-  <h1>Editing movie</h1>
+  <h1 class="page-title">Edit Movie</h1>
 
   <%= render "form", movie: @movie %>
 
-  <%= link_to "Back", movies_path, class: "back-link" %>
+  <div class="form-actions">
+    <%= link_to "Back", movies_path, class: "back-link" %>
+  </div>
 </div>
+
+<style>
+  .movie-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .page-title {
+    color: #333;
+    font-size: 28px; /* Increased font size */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .form-actions {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .back-link {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px; /* Increased font size */
+  }
+
+  .back-link:hover {
+    color: #007bff;
+  }
+</style>
