@@ -1,26 +1,71 @@
-/* Sort Links Styling */
-.sort-link {
-    color: #007BFF;
+/* Styling the action buttons (Show, Edit, Delete) */
+.action-button {
+    padding: 8px 15px;
+    border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  /* Show button (green) */
+  .show-button {
+    background-color: #4CAF50;
+  }
+  
+  .show-button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Edit button (blue) */
+  .edit-button {
+    background-color: #2196F3;
+  }
+  
+  .edit-button:hover {
+    background-color: #0b7dda;
+  }
+  
+  /* Delete button (red) */
+  .delete-button {
+    background-color: #f44336;
+  }
+  
+  .delete-button:hover {
+    background-color: #e53935;
+  }
+  
+  /* Search form styles */
+  .search-form {
+    margin-bottom: 20px;
+  }
+  
+  .search-input {
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  .search-button {
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .sort-link {
     margin-right: 10px;
   }
   
-  .sort-link:hover {
-    color: #0056b3;
-  }
-  
   .new-movie-link {
-    display: block;
     margin-top: 20px;
-    background-color: #007BFF;
-    color: white;
     padding: 10px;
-    text-align: center;
+    background-color: #2196F3;
+    color: white;
     text-decoration: none;
+    border-radius: 5px;
   }
   
   .new-movie-link:hover {
-    background-color: #0056b3;
+    background-color: #0b7dda;
   }
   
