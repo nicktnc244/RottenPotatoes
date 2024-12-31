@@ -2,7 +2,7 @@
 
 <% content_for :title, "Movies" %>
 
-<h1>Movies</h1>
+<h1 style="color: #333; font-size: 24px; text-align: center; margin-bottom: 20px;">Movies</h1>
 
 <%= form_with(url: movies_path, method: :get, local: true, class: 'search-form') do %>
   <div>
@@ -16,9 +16,9 @@
 <%= link_to "Sort by Date", movies_path(sort: "created_at", direction: (params[:direction] == "asc" ? "desc" : "asc")), class: 'sort-link' %>
 
 <table class="movies-table">
-  <thead>
     <tr>
       <th>Title</th>
+      <th>Release Date</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -26,6 +26,7 @@
     <% @movies.each_with_index do |movie, index| %>
       <tr style="<%= index.even? ? 'background-color: #f2f2f2;' : 'background-color: #ffffff;' %>">
         <td><%= movie.title %></td>
+        <td><%= movie.release_date.strftime('%B %d, %Y') if movie.release_date %></td>
         <td>
           <%= link_to "Show", movie, class: 'action-button show-button' %> |
           <%= link_to "Edit", edit_movie_path(movie), class: 'action-button edit-button' %> |
