@@ -57,6 +57,19 @@ class MoviesController < ApplicationController
     end
   end
 
+  def index
+    # Default sort and direction
+    sort = params[:sort] || "created_at"
+    direction = params[:direction] || "asc"
+
+    # Ensure that the sort column is either 'title' or 'created_at'
+    if sort == "title"
+      @movies = Movie.order(title: direction)
+    else
+      @movies = Movie.order(created_at: direction)
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_movie

@@ -4,27 +4,28 @@
 
 <h1>Movies</h1>
 
-<table border="1">
-  <thead>
+<%= link_to "Sort by Title", movies_path(sort: "title", direction: (params[:direction] == "asc" ? "desc" : "asc")), class: 'sort-link' %> |
+<%= link_to "Sort by Date", movies_path(sort: "created_at", direction: (params[:direction] == "asc" ? "desc" : "asc")), class: 'sort-link' %>
+
+<table style="width: 100%; border-collapse: collapse;">
+  <thead style="background-color: #4CAF50; color: white;">
     <tr>
       <th>Title</th>
-      <th>Description</th>
       <th>Actions</th>
     </tr>
   </thead>
   <tbody>
-    <% @movies.each do |movie| %>
-      <tr>
+    <% @movies.each_with_index do |movie, index| %>
+      <tr style="<%= index.even? ? 'background-color: #f2f2f2;' : 'background-color: #ffffff;' %>">
         <td><%= movie.title %></td>
-        <td><%= movie.description %></td>
         <td>
-          <%= link_to "Show", movie %> |
-          <%= link_to "Edit", edit_movie_path(movie) %> |
-          <%= link_to "Delete", movie, method: :delete, data: { confirm: "Are you sure?" } %>
+          <%= link_to "Show", movie, class: 'action-link' %> |
+          <%= link_to "Edit", edit_movie_path(movie), class: 'action-link' %> |
+          <%= link_to "Delete", movie, method: :delete, data: { confirm: "Are you sure?" }, class: 'action-link' %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to "New movie", new_movie_path %>
+<%= link_to "New movie", new_movie_path, class: 'new-movie-link' %>
