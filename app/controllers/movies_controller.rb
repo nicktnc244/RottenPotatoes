@@ -57,18 +57,31 @@ class MoviesController < ApplicationController
     end
   end
 
+<<<<<<< Tabnine <<<<<<<
   def index
     # Default sort and direction
     sort = params[:sort] || "created_at"
     direction = params[:direction] || "asc"
 
-    # Ensure that the sort column is either 'title' or 'created_at'
+    # Ensure that the sort column is either 'title' or 'created_at'#-
+    # Initialize the query#+
+    @movies = Movie.all#+
+#+
+    # Apply search if search parameter is present#+
+    if params[:search].present?#+
+      @movies = @movies.where("title LIKE ?", "%#{params[:search]}%")#+
+    end#+
+#+
+    # Apply sorting#+
     if sort == "title"
-      @movies = Movie.order(title: direction)
+      @movies = Movie.order(title: direction)#-
+      @movies = @movies.order(title: direction)#+
     else
-      @movies = Movie.order(created_at: direction)
+      @movies = Movie.order(created_at: direction)#-
+      @movies = @movies.order(created_at: direction)#+
     end
   end
+>>>>>>> Tabnine >>>>>>># {"source":"chat"}
 
   private
     # Use callbacks to share common setup or constraints between actions.
