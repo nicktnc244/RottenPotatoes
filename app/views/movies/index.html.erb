@@ -4,16 +4,11 @@
 
 <h1>Movies</h1>
 
-<%= form_tag(movies_path, method: :get, class: "search-form") do %>
-  <%= text_field_tag :query, params[:query], placeholder: "Search by title", class: "search-input" %>
-  <%= submit_tag "Search", class: "search-button" %>
-<% end %>
-
 <%= link_to "Sort by Title", movies_path(sort: "title", direction: (params[:direction] == "asc" ? "desc" : "asc")), class: 'sort-link' %> |
 <%= link_to "Sort by Date", movies_path(sort: "created_at", direction: (params[:direction] == "asc" ? "desc" : "asc")), class: 'sort-link' %>
 
-<table class="movie-table">
-  <thead class="table-header">
+<table style="width: 100%; border-collapse: collapse;">
+  <thead style="background-color: #4CAF50; color: white;">
     <tr>
       <th>Title</th>
       <th>Actions</th>
@@ -21,9 +16,9 @@
   </thead>
   <tbody>
     <% @movies.each_with_index do |movie, index| %>
-      <tr class="<%= index.even? ? 'even-row' : 'odd-row' %>">
-        <td class="movie-title"><%= movie.title %></td>
-        <td class="movie-actions">
+      <tr style="<%= index.even? ? 'background-color: #f2f2f2;' : 'background-color: #ffffff;' %>">
+        <td><%= movie.title %></td>
+        <td>
           <%= link_to "Show", movie, class: 'action-link' %> |
           <%= link_to "Edit", edit_movie_path(movie), class: 'action-link' %> |
           <%= link_to "Delete", movie, method: :delete, data: { confirm: "Are you sure?" }, class: 'action-link' %>

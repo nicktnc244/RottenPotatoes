@@ -1,70 +1,15 @@
-/* General page background */
-body {
-    background-color: #f4f7f6; /* Light grey background for the whole page */
-    font-family: Arial, sans-serif;
-    padding: 20px;
-  }
-  
-  /* Movie Table Styles */
-  .movie-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .table-header {
-    background-color: #4CAF50;
-    color: white;
-  }
-  
-  th, td {
-    padding: 12px;
-    text-align: left;
-    border: 1px solid #ddd;
-  }
-  
-  th {
-    font-size: 1.2em;
-  }
-  
-  tr:hover {
-    background-color: #f1f1f1; /* Light grey on hover */
-  }
-  
-  /* Alternating row colors */
-  .even-row {
-    background-color: #eaf2e4; /* Light green for even rows */
-  }
-  
-  .odd-row {
-    background-color: #ffffff; /* White for odd rows */
-  }
-  
-  /* Movie Title Box */
-  .movie-title {
-    background-color: #fafafa;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Action Links */
-  .movie-actions {
-    font-size: 0.9em;
-  }
-  
-  .action-link {
-    text-decoration: none;
+/* Sort Links Styling */
+.sort-link {
     color: #007BFF;
+    text-decoration: none;
     font-weight: bold;
+    margin-right: 10px;
   }
   
-  .action-link:hover {
+  .sort-link:hover {
     color: #0056b3;
   }
   
-  /* New Movie Link */
   .new-movie-link {
     display: block;
     margin-top: 20px;
@@ -73,34 +18,9 @@ body {
     padding: 10px;
     text-align: center;
     text-decoration: none;
-    border-radius: 5px;
   }
   
   .new-movie-link:hover {
     background-color: #0056b3;
-  }
-  
-  /* Search Form */
-  .search-form {
-    margin-bottom: 20px;
-  }
-  
-  .search-input {
-    padding: 5px;
-    margin-right: 10px;
-    border-radius: 4px;
-  }
-  
-  .search-button {
-    padding: 6px 12px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .search-button:hover {
-    background-color: #45a049;
   }
   
