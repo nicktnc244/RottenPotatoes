@@ -1,16 +1,40 @@
-<p style="color: green"><%= notice %></p>
-
+<<<<<<< Tabnine <<<<<<<
+<p style="color: green"><%= notice %></p>#-
 <% content_for :title, "Movies" %>
 
-<h1>Movies</h1>
-
-<div id="movies">
-  <% @movies.each do |movie| %>
-    <%= render movie %>
-    <p>
-      <%= link_to "Show this movie", movie %>
-    </p>
+<h1>Movies</h1>#-
+#-
+<div id="movies">#-
+  <% @movies.each do |movie| %>#-
+    <%= render movie %>#-
+    <p>#-
+      <%= link_to "Show this movie", movie %>#-
+    </p>#-
+<div class="movies-container">#+
+  <% if notice.present? %>#+
+    <div class="notice">#+
+      <%= notice %>#+
+    </div>#+
   <% end %>
-</div>
+</div>#-
 
-<%= link_to "New movie", new_movie_path %>
+<%= link_to "New movie", new_movie_path %>#-
+  <h1>Movies</h1>#+
+#+
+  <div class="movie-grid">#+
+    <% @movies.each do |movie| %>#+
+      <div class="movie-card">#+
+        <h2 class="movie-title"><%= movie.title %></h2>#+
+        <div class="movie-rating"><%= movie.rating %></div>#+
+        <p class="movie-description"><%= truncate(movie.description, length: 100) %></p>#+
+        <p class="movie-release-date">Release Date: <%= movie.release_date %></p>#+
+        <%= link_to "Show details", movie, class: "movie-link" %>#+
+      </div>#+
+    <% end %>#+
+  </div>#+
+#+
+  <div class="new-movie-link">#+
+    <%= link_to "Add New Movie", new_movie_path, class: "btn-new-movie" %>#+
+  </div>#+
+</div>#+
+>>>>>>> Tabnine >>>>>>># {"source":"chat"}
