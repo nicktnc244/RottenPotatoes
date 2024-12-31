@@ -20,6 +20,12 @@ more_movies = [
     :release_date => '19-Feb-2021'},
   {:title => 'CODA', :rating => 'PG-13',
     :release_date => '13-Aug-2021'}
+  {:title => 'Konosuba', :rating => 'PG-13',
+  :release_date => '13-Aug-2023'}
+  {:title => 'Minecraft', :rating => 'PG-13',
+  :release_date => '13-Aug-2024'}
+  {:title => 'Wicked', :rating => 'PG-13',
+    :release_date => '13-Aug-2022'}
 ]
 
 more_movies.each do |movie|
