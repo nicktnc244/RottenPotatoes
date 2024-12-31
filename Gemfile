@@ -7,7 +7,7 @@ gem "rails", "~> 8.0.1"
 gem "propshaft"
 # Use sqlite3 as the database for Active Record
 group :development, :test do
-  gem 'sqlite3'
+  gem "sqlite3", "~> 2.5.0"
 end
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
